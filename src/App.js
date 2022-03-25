@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Cards from "./components/Cards";
+import Card from "./components/Card";
 
 const App = () => {
-  const [cards] = useState([
+  const [cards, setCards] = useState([
     {
       id: 1,
       name: "John Mayer",
@@ -29,11 +29,11 @@ const App = () => {
     },
   ]);
 
-  return (
-    <div className="container">
-      <Cards cards={cards} />
-    </div>
-  );
+  const userCards = cards.map((card) => {
+    return <Card card={card} />;
+  });
+
+  return <div className="container">{userCards}</div>;
 };
 
 export default App;
