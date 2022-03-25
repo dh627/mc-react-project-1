@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1877f2;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.card {
+  background-color: white;
+  padding: 30px 40px;
+  width: 30%;
+  border-radius: 3px;
+}
