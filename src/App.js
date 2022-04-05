@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./components/Card";
+import Form from "./components/Form";
 
 const App = () => {
   const [cards, setCards] = useState([
@@ -33,7 +34,12 @@ const App = () => {
     return <Card card={card} />;
   });
 
-  return <div className="container">{userCards}</div>;
+  return (
+    <div className="container">
+      <Form cards={cards} />
+      <div className="card-container">{userCards}</div>
+    </div>
+  );
 };
 
 export default App;
