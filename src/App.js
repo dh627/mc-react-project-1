@@ -30,13 +30,17 @@ const App = () => {
     },
   ]);
 
+  const updatePage = (cards) => {
+    setCards(cards);
+  };
+
   const userCards = cards.map((card) => {
     return <Card card={card} />;
   });
 
   return (
     <div className="container">
-      <Form cards={cards} />
+      <Form cards={cards} updatePage={updatePage} />
       <div className="card-container">{userCards}</div>
     </div>
   );

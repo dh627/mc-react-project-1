@@ -47,7 +47,9 @@ span {
 
 .card-container {
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around;  - this was making 1st card on second row not go to start of row, but middle of it */
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 75%;
   margin: auto;
   margin-top: 60px;
@@ -55,8 +57,9 @@ span {
 }
 
 .card {
+  margin-bottom: 20px;
   background-color: white;
   padding: 30px 40px;
-  width: 30%;
+  width: 32%;
   border-radius: 3px;
 }

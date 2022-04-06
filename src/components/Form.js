@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Form = ({ people }) => {
+const Form = ({ cards, updatePage }) => {
   const [name, setName] = useState("");
   const [job, setJob] = useState("");
   const [country, setCountry] = useState("");
@@ -9,15 +9,16 @@ const Form = ({ people }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("PEOPLE ", people);
-    const person = { name, job, country, age, netWorth };
-    console.log(person);
+    const newArray = [...cards];
+    let id = cards.length + 1;
+    const person = { id, name, job, country, age, netWorth };
+    newArray.push(person);
+    updatePage(newArray);
   };
 
   return (
     <div className="form">
       <form onSubmit={handleSubmit}>
-        {/* name, job, country, age, net worth */}
         <div className="form-control">
           <input
             type="text"
